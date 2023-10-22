@@ -1,0 +1,155 @@
+body
+{
+    background-color:rgb(0,0,0);
+    display:grid;
+    place-items:center;
+    transition: all 0.3s;
+    transition-timing-function: ease;
+}
+/*Styling for title*/
+h1{
+    text-align: center;
+    font-family: "press start 2p","consolas",'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: white;
+}
+/*styling for each of the 6 cards*/
+.box
+{
+    
+    grid-template-rows: minmax(340px,auto);
+    display:grid;
+    grid-template-areas: "overlap";
+    border-style:solid;
+    border-radius: 10px;
+    border-color: #eadc6f;
+    background-color:#eadc6f;
+    font-family: 'press start 2p', sans-serif;
+    font-size: 15px;
+    padding: 12px;
+    margin:20px;
+    transform-style: preserve-3d;/*used to make sure that when it is flipped it has a fresh backside*/
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+/*styling for front and the back of the card*/
+.front,.back{
+    text-align: center;
+    border-radius:10px;
+    grid-area: overlap;
+    backface-visibility: hidden;
+}
+/*styling for the quotes and jokes container*/
+.favcontainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20vw;
+}
+.likequote,.likejoke{
+    height:auto;
+    width:auto;
+    background-color: lavender;
+    border-style: solid;
+    border-radius: 10px;
+    padding:5px;
+    border-color: lavender;
+    color:black;
+    /* text-align: center; */
+    font-family: "press start 2p",sans-serif;
+    /* to make sure that the bullet points are inside the box  */
+    list-style-position: inside ; 
+}
+/*added this so that the front and the back dont overlap on each other*/
+.back{
+    
+    transform:rotateY(180deg);
+    
+}
+.box:hover{
+    transform: translateY(-10px);
+}
+
+
+.container{
+    /* Used grid to display the boxes/cards in */
+    display:grid;
+    grid-template-columns: repeat(3,250px);
+    grid-gap:20px;
+    grid-auto-rows: minmax(500px,auto);
+    grid-auto-columns: 800px;
+    transform: translateY(50px);
+}
+/*for the icons and the like buttons*/
+.iconbox{
+    height: 50px;
+    width:50px;
+    border-style: solid;
+    background-color:lightblue;
+    border-color:lightblue;
+    border-radius:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons, .buttons1{
+    display: flex;
+    align-items: flex-end;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 25px;
+}
+/*responsiveness*/
+@media (max-width: 600px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: repeat(6,1fr);
+        grid-gap:20px;
+        padding:5px;
+        transform: translateX(7.7em);
+    }
+    .favcontainer{
+        display: grid;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: repeat(2,1fr);
+        grid-gap:20px;
+        padding:5px;
+
+    }
+   
+}
+@media (max-width: 500px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: repeat(6,1fr);
+        grid-gap:20px;
+        padding:5px;
+        transform: translateX(22.5%);
+    }
+}
+@media (max-width: 475px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: repeat(6,1fr);
+        grid-gap:20px;
+        padding:5px;
+        transform: translateX(20.5%);
+    }
+}
+@media (max-width: 400px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: repeat(6,1fr);
+        grid-gap:20px;
+        padding:5px;
+        transform: translateX(15.5%);
+    }
+}
+
